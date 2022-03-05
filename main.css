@@ -198,6 +198,10 @@ a {
   text-decoration: none; /* 拿掉底線 */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 /*Main Header*/
 
@@ -441,3 +445,133 @@ header {
 .card:hover::after {
   transform: scale(1,1.05);
 }
+
+/* adoption */
+
+.adoption-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 135px;
+}
+
+.adoption-image {
+  width: 100%;
+}
+
+.adoption-info {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: 1.2rem;
+}
+
+.adoption-info .title {
+  font-size: 1.75rem;
+  margin-bottom: 0.4rem;
+  color: #267c99;
+}
+
+.adoption-info .description {
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+  color: #5e5c5c;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  background: #4a4a4a;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+
+/********* 電腦版樣式 *********/
+@media screen and (min-width: 768px) {
+  /*Main Header*/
+  /*移除漢堡排*/
+  .navbar-toggle-label {
+    display: none;
+  }
+  /*導覽列 CSS 樣式設定復原*/
+  .nav {
+    all: unset;
+  }
+  /*導覽項目 CSS 樣式設定復原*/
+  .nav-item {
+    margin: 0;
+    opacity: 1;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .navbar-brand {
+    grid-column: 2 / 3;
+  }
+
+  .nav {
+    grid-column: 3 / 4;
+  }
+
+  .nav-list {
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: end;
+    grid-gap: 2rem;
+  }
+  
+  .banner-wrapper {
+  /*修改數值為1.5rem*/
+  grid-gap: 1.5rem;
+  /*修改名字和排列順序*/
+  grid-template-areas:
+    "main main main left"
+    "main main main right";
+  }
+  
+  .main-banner {
+    align-items:flex-start;
+    justify-content: center;
+  }
+  
+  .main-banner .banner-title {
+    font-size: 4rem;
+  }
+  .main-banner .banner-description {
+    font-size: 2rem;
+  }
+  .sub-banner .banner-title {
+    font-size: 2rem;
+  }
+  .sub-banner .action {
+    font-size: 1.2rem;
+  }
+
+  .adoption-wrapper {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+  }
+
+  .adoption-info {
+    justify-items: start;
+  }
+  
+  .adoption-info .title {
+  font-size: 3rem;
+  }
+  .adoption-info .description {
+  font-size: 1.875rem;
+  }
+
+}
+
